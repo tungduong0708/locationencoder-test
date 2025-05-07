@@ -1,7 +1,6 @@
 build
 results
 myenv
-datasets
 lightning_logs
 *.DS_Store
 .idea
