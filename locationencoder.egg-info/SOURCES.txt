@@ -1,0 +1,10 @@
+setup.py
+locationencoder/__init__.py
+locationencoder/imageencoder.py
+locationencoder/locationencoder.py
+locationencoder/locationimageencoder.py
+locationencoder.egg-info/PKG-INFO
+locationencoder.egg-info/SOURCES.txt
+locationencoder.egg-info/dependency_links.txt
+locationencoder.egg-info/requires.txt
+locationencoder.egg-info/top_level.txt
