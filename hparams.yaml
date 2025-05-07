@@ -64,7 +64,7 @@ landoceandataset:
   sphericalharmonics-siren:
     legendre_polys: 10
     dim_hidden: 64
-    num_layers: 2
+    num_layers: 8
     optimizer:
       lr: 0.0001421671897373
       wd: 0.0036709986823345
