@@ -57,7 +57,7 @@ def tune(positional_encoding_name, neural_network_name, dataset="landoceandatase
         regression = False
         presence_only = False
         loss_bg_weight = False
-    if dataset == "checkerboard":
+    elif dataset == "checkerboard":
         datamodule = CheckerboardDataModule()
         num_classes = 16
         regression = False
@@ -69,6 +69,8 @@ def tune(positional_encoding_name, neural_network_name, dataset="landoceandatase
         regression = False
         presence_only = True
         loss_bg_weight = 5
+    else:
+        raise ValueError(f"Unknown dataset: {dataset}")
 
     def objective(trial: optuna.trial.Trial) -> float:
 
@@ -181,13 +183,13 @@ if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", type=str, default="checkerboard", help="Name of the dataset")
+    parser.add_argument("--dataset", type=str, default="landoceandataset", help="Name of the dataset")
 
     args = parser.parse_args()
 
     dataset = args.dataset
 
-    positional_encoders = ["spherem", "spheremplus"]
+    positional_encoders = ["cartesian3d", "sphericalharmonics"]
     neural_networks = ["linear", "siren", "fcnet"]
     for pe in positional_encoders:
         for nn in neural_networks:
